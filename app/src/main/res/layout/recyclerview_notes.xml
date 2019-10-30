@@ -17,11 +17,11 @@
                 android:paddingTop="@dimen/recycler_item_footer_padding"
                 android:paddingRight="@dimen/recycler_item_footer_padding"
                 android:paddingBottom="@dimen/recycler_item_footer_padding"
-                tools:text="Notes Title" />
+                android:text="@string/notes_title" />
 
         <ImageView
                 android:id="@+id/note_image"
-                imageResource="@drawable/default"
+                imageResource="@drawable/default_pic"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"

@@ -13,17 +13,17 @@
             android:orientation="vertical">
 
         <TextView
-                android:id="@+id/name"
+                android:id="@+id/notes_title"
                 style="@style/TextAppearance.AppCompat.Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/notes_detail_name_margin_top"
                 android:layout_marginBottom="0dp"
-                android:text="Notes Title" />
+                android:text="@string/notes_title" />
 
         <ImageView
                 android:id="@+id/notes_image"
-                imageResource="@drawable/default"
+                imageResource="@drawable/default_pic"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/notes_detail_image_size"
                 android:layout_marginTop="@dimen/notes_detail_image_margin_vertical"
@@ -33,7 +33,7 @@
                 android:scaleType="centerCrop" />
 
         <TextView
-                android:id="@+id/description"
+                android:id="@+id/notes_content"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -42,7 +42,7 @@
                 android:layout_marginRight="@dimen/notes_detail_description_margin_right"
                 android:layout_marginBottom="@dimen/notes_detail_description_margin_bottom"
                 android:autoLink="web"
-                android:text="Isi notes-nya di sini" />
+                android:text="@string/notes_content" />
 
     </LinearLayout>
     </ScrollView>

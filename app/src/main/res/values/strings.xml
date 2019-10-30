@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Your Notes</string>
     <string name="action_settings">Settings</string>
+    <string name="notes_content">Note\'s Content</string>
+
+    <string name="createnotes_title">Type your note\'s title here</string>
+    <string name="createnotes_content">Type your note\'s content here</string>
+    <string name="notes_title">Note\'s Title</string>
+    <string name="createnotes_button">Create Note</string>
 </resources>

@@ -19,7 +19,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/notes_detail_name_margin_top"
                     android:layout_marginBottom="0dp"
-                    android:hint="Notes Title" />
+                    android:hint="@string/createnotes_title"/>
 
             <EditText
                     android:id="@+id/addnote_description"
@@ -28,7 +28,7 @@
                     android:layout_height="200dp"
                     android:layout_marginTop="0dp"
                     android:autoLink="web"
-                    android:hint="Isi notes-nya di sini" />
+                    android:hint="@string/createnotes_content" />
 
             <ImageView
                     android:id="@+id/imageview_maketransaction_photo"
@@ -39,9 +39,10 @@
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"/>
 
-            <Button android:layout_width="wrap_content"
+            <Button android:id="@+id/button_createnote"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CreateNote"
+                    android:text="@string/createnotes_button"
                     android:layout_gravity="center"
                     android:layout_marginTop="8dp"/>
 
