@@ -33,14 +33,14 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-//        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-//
-//        recyclerView.layoutManager = LinearLayoutManager(this)
-//        recyclerView.setHasFixedSize(true)
-//        recyclerView.adapter = adapter
-//        noteViewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
-//        noteViewModel.getAllNotes().observe(this,
-//            Observer<List<Notes>> { t -> adapter.setNotes(t!!) })
+        val recyclerView = findViewById<RecyclerView>(R.id.notes)
+
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
+        recyclerView.adapter = adapter
+        noteViewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
+        noteViewModel.getAllNotes().observe(this,
+            Observer<List<Notes>> { t -> adapter.setNotes(t!!) })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
