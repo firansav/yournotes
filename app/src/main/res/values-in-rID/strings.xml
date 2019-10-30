@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Your Notes</string>
+    <string name="action_settings">Pengaturan</string>
+    <string name="notes_content">Isi Note</string>
+    <string name="createnotes_title">Ketikkan judul note kamu di sini</string>
+    <string name="createnotes_content">Ketikkan isi dari note kamu di sini</string>
+    <string name="notes_title">Judul Note</string>
+    <string name="createnotes_button">Buat Note</string>
+</resources>
