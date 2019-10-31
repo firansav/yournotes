@@ -1,7 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes
 
-import android.arch.persistence.room.Entity
-import android.arch.persistence.room.PrimaryKey
+import androidx.room.*
 
 @Entity(tableName = "notes_table")
 data class Notes(

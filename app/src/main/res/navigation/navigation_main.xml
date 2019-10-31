@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/navigation_main"
+        app:startDestination="@id/mainFragment">
+
+    <fragment
+            android:id="@+id/mainFragment"
+            android:name="id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes.MainFragment"
+            android:label="fragment_main"
+            tools:layout="@layout/fragment_notes_list" >
+        <action
+                android:id="@+id/action_mainFragment_to_createNote"
+                app:destination="@id/createNote"
+                app:enterAnim="@anim/fragment_open_enter"
+                app:popUpTo="@+id/mainFragment" />
+        <action
+                android:id="@+id/action_mainFragment_to_detailNote"
+                app:destination="@id/detailNote"
+                app:enterAnim="@anim/fragment_open_enter"
+                app:popUpTo="@+id/createNote" />
+    </fragment>
+    <fragment
+            android:id="@+id/createNote"
+            android:name="id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes.CreateNotes"
+            android:label="CreateNotes"
+            tools:layout="@layout/fragment_create_notes">
+        <action
+                android:id="@+id/action_createNote_to_mainFragment"
+                app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/detailNote"
+            android:name="id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes.DetailNote"
+            android:label="detailNote"
+            tools:layout="@layout/fragment_notes_details">
+        <action
+                android:id="@+id/action_detailNote_to_mainFragment"
+                app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>

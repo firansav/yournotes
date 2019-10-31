@@ -4,7 +4,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fillViewport="true"
-                tools:ignore="RtlHardcoded">
+                tools:ignore="RtlHardcoded"
+                tools:context=".CreateNotes">
 
         <LinearLayout
                 android:layout_width="match_parent"
@@ -49,5 +50,6 @@
         </LinearLayout>
 
     </ScrollView>
+
 
 </layout>
