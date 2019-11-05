@@ -1,6 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes
 
-
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.GridLayoutManager
+
+import id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes.R
 import kotlinx.android.synthetic.main.fragment_main.*
 
 /**
@@ -35,13 +38,22 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
 
-        observeViewModel()
-//
-//        fab.setOnClickListener{
-//            Navigation.findNavController(it)
-//                .navigate(ListFragmentDirections.actionCreateList())
-//        }
+        val activity = activity as Context
 
+        notes_rv.adapter = notesAdapter
+        notes_rv.layoutManager = GridLayoutManager(activity, 2)
+
+        observeViewModel()
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        viewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
+
+        notes_rv.adapter = notesAdapter
+        notes_rv.layoutManager = GridLayoutManager(activity, 2)
+
+        observeViewModel()
     }
 
 

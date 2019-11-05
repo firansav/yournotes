@@ -7,13 +7,15 @@ import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.navigation.Navigation
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,21 +28,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-//        fab.setOnClickListener { view ->
-//            startActivityForResult(
-//                Intent(this, CreateNoteActivity::class.java),
-//                ADD_NOTE_REQUEST
-//            )
-//        }
+        fab.setOnClickListener { view ->
+            startActivityForResult(
+                Intent(this, CreateNoteActivity::class.java),
+                ADD_NOTE_REQUEST
+            )
+        }
 
-        val recyclerView = findViewById<RecyclerView>(R.id.notes)
+        notes_rv.layoutManager = GridLayoutManager(this, 2)
+        notes_rv.adapter = adapter
 
-//        recyclerView.layoutManager = LinearLayoutManager(this)
-//        recyclerView.setHasFixedSize(true)
-//        recyclerView.adapter = adapter
-//        noteViewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
-//        noteViewModel.getAllNotes().observe(this,
-//            Observer<List<Notes>> { t -> adapter.setNotes(t!!) })
+        noteViewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
+        noteViewModel .getAllNotes().observe(this,
+            Observer<List<Notes>> { t -> adapter.setNotes(t!!) })
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -59,21 +60,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//
-//        if (requestCode == ADD_NOTE_REQUEST && resultCode == Activity.RESULT_OK) {
-//            val newNote = Notes(
-//                data!!.getStringExtra(CreateNoteActivity.EXTRA_TITLE),
-//                data.getStringExtra(CreateNoteActivity.EXTRA_DESCRIPTION)
-//            )
-//            noteViewModel.insert(newNote)
-//
-//            Toast.makeText(this, "Note saved!", Toast.LENGTH_SHORT).show()
-//        } else {
-//            Toast.makeText(this, "Note not saved!", Toast.LENGTH_SHORT).show()
-//        }
-//
-//
-//    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == ADD_NOTE_REQUEST && resultCode == Activity.RESULT_OK) {
+            val newNote = Notes(
+                data!!.getStringExtra(CreateNoteActivity.EXTRA_TITLE),
+                data.getStringExtra(CreateNoteActivity.EXTRA_DESCRIPTION)
+            )
+            noteViewModel.insert(newNote)
+
+            Toast.makeText(this, "Note saved!", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "Note not saved!", Toast.LENGTH_SHORT).show()
+        }
+
+
+    }
 }

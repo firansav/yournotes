@@ -41,9 +41,9 @@ abstract class NotesDatabase : RoomDatabase() {
         private val noteDao = db?.noteDao()
 
         override fun doInBackground(vararg p0: Unit?) {
-            noteDao?.insert(Notes("Title 1", "description 1"))
-            noteDao?.insert(Notes("Title 2", "description 2"))
-            noteDao?.insert(Notes("Title 3", "description 3"))
+            noteDao?.insert(Notes("Title 1", "Isi 1"))
+            noteDao?.insert(Notes("Title 2", "Isi 2"))
+            noteDao?.insert(Notes("Title 3", "Isi 3"))
         }
     }
 

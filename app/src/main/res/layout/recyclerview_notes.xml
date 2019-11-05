@@ -5,6 +5,15 @@
                  android:layout_height="wrap_content"
                  android:layout_margin="@dimen/recycler_layout_spacing">
 
+        <ImageView
+                android:id="@+id/note_image"
+                imageResource="@drawable/default_pic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:scaleType="centerInside" />
+
         <TextView
                 android:id="@+id/name"
                 style="@style/TextAppearance.AppCompat.Subhead.Inverse"
@@ -18,15 +27,6 @@
                 android:paddingRight="@dimen/recycler_item_footer_padding"
                 android:paddingBottom="@dimen/recycler_item_footer_padding"
                 android:text="@string/notes_title" />
-
-        <ImageView
-                android:id="@+id/note_image"
-                imageResource="@drawable/default_pic"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:contentDescription="@null"
-                android:scaleType="centerInside" />
 
     </FrameLayout>
 </layout>

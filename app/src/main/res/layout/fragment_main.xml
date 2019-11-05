@@ -5,7 +5,9 @@
         android:id="@+id/root_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainFragment">
+        tools:context=".MainFragment"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:navGraph="@navigation/navigation_main">
 
 <!--    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
 <!--    <fragment-->
@@ -15,7 +17,7 @@
 <!--            app:navGraph="@navigation/navigation_main"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/notes"
+            android:id="@+id/notes_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" />

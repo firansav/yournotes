@@ -4,9 +4,10 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import android.view.MenuItem
 import android.widget.Toast
-import kotlinx.android.synthetic.main.fragment_create_notes.*
+import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
+import kotlinx.android.synthetic.main.activity_create_notes.*
 
 class CreateNoteActivity : AppCompatActivity() {
 
@@ -16,35 +17,34 @@ class CreateNoteActivity : AppCompatActivity() {
     }
 
     var id = 0;
+    private lateinit var viewModel: NotesViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_create_notes)
-//        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_close)
-    }
+        setContentView(R.layout.activity_create_notes)
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        return when (item?.itemId) {
-            R.id.button_createnote -> {
+        viewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
+//        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_close)
+
+        button_createnote.setOnClickListener{
+            if (addnote_title.text.toString().trim().isBlank() || addnote_description.text.toString().trim().isBlank()) {
+                Toast.makeText(this, "Can not insert empty note!", Toast.LENGTH_SHORT).show()
+            } else {
                 saveNote()
-                true
+
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
             }
-            else -> super.onOptionsItemSelected(item)
         }
     }
 
     private fun saveNote() {
-        if (addnote_title.text.toString().trim().isBlank() || addnote_description.text.toString().trim().isBlank()) {
-            Toast.makeText(this, "Can not insert empty note!", Toast.LENGTH_SHORT).show()
-            return
-        }
 
-        val data = Intent().apply {
-            putExtra(EXTRA_TITLE, addnote_title.text.toString())
-            putExtra(EXTRA_DESCRIPTION, addnote_description.text.toString())
-        }
+        val newNote = Notes(
+            addnote_title.text.toString(),
+            addnote_description.text.toString())
 
-        setResult(Activity.RESULT_OK, data)
-        finish()
+        viewModel.insert(newNote)
+        Toast.makeText(this, "Note created", Toast.LENGTH_SHORT).show()
     }
 }
