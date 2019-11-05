@@ -38,10 +38,4 @@ class NotesAdapter : RecyclerView.Adapter<NotesAdapter.NoteHolder>() {
         this.notes = notes
         notifyDataSetChanged()
     }
-//
-//    inner class NoteHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
-//    {
-//        var textViewTitle: TextView = itemView.findViewById(R.id.name)
-//        var textViewDescription: TextView = itemView.findViewById(R.id.notes_content)
-//    }
 }

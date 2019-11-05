@@ -23,7 +23,16 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/fragment_main"/>
+<!--    <include layout="@layout/fragment_main"/>-->
+
+    <fragment
+            android:id="@+id/fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/navigation_main"
+            android:layout_marginTop="?attr/actionBarSize"/>
 
 <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
 <!--            android:id="@+id/fab"-->

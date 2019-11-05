@@ -28,19 +28,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            startActivityForResult(
-                Intent(this, CreateNoteActivity::class.java),
-                ADD_NOTE_REQUEST
-            )
-        }
+//        fab.setOnClickListener { view ->
+//            startActivityForResult(
+//                Intent(this, CreateNoteActivity::class.java),
+//                ADD_NOTE_REQUEST
+//            )
+//        }
 
-        notes_rv.layoutManager = GridLayoutManager(this, 2)
-        notes_rv.adapter = adapter
-
-        noteViewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
-        noteViewModel .getAllNotes().observe(this,
-            Observer<List<Notes>> { t -> adapter.setNotes(t!!) })
+//        notes_rv.layoutManager = GridLayoutManager(this, 2)
+//        notes_rv.adapter = adapter
+//
+//        noteViewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
+//        noteViewModel .getAllNotes().observe(this,
+//            Observer<List<Notes>> { t -> adapter.setNotes(t!!) })
 
     }
 

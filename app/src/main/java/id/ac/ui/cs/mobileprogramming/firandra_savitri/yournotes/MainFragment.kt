@@ -1,6 +1,7 @@
 package id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -23,8 +24,9 @@ class MainFragment : Fragment() {
         fun newInstance() = MainFragment()
     }
 
-    private lateinit var viewModel: NotesViewModel
-    private val notesAdapter = NotesAdapter()
+    private val ADD_NOTE_REQUEST = 1
+    private lateinit var noteViewModel: NotesViewModel
+    private val adapter = NotesAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,13 +36,31 @@ class MainFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        fab.setOnClickListener { view ->
+            startActivityForResult(
+                Intent(activity, CreateNoteActivity::class.java),
+                ADD_NOTE_REQUEST
+            )
+        }
+
+        notes_rv.layoutManager = GridLayoutManager(activity, 2)
+        notes_rv.adapter = adapter
+
+        noteViewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
+        noteViewModel .getAllNotes().observe(this,
+            Observer<List<Notes>> { t -> adapter.setNotes(t!!) })
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
+        noteViewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
 
         val activity = activity as Context
 
-        notes_rv.adapter = notesAdapter
+        notes_rv.adapter = adapter
         notes_rv.layoutManager = GridLayoutManager(activity, 2)
 
         observeViewModel()
@@ -48,18 +68,18 @@ class MainFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        viewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
-
-        notes_rv.adapter = notesAdapter
-        notes_rv.layoutManager = GridLayoutManager(activity, 2)
-
-        observeViewModel()
+//        noteViewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
+//
+//        notes_rv.adapter = adapter
+//        notes_rv.layoutManager = GridLayoutManager(activity, 2)
+//
+//        observeViewModel()
     }
 
 
     fun observeViewModel() {
-        viewModel.getAllNotes().observe(this,
-            Observer<List<Notes>> { t -> notesAdapter.setNotes(t!!) })
+        noteViewModel.getAllNotes().observe(this,
+            Observer<List<Notes>> { t -> adapter.setNotes(t!!) })
     }
 
 }
