@@ -28,7 +28,7 @@
                     android:id="@+id/notes_image"
                     android:src="@drawable/default_pic"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/notes_detail_image_size"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/notes_detail_image_margin_vertical"
                     android:layout_marginBottom="@dimen/notes_detail_image_margin_vertical"
                     android:adjustViewBounds="true"

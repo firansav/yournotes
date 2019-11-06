@@ -7,7 +7,5 @@
     <string name="createnotes_content">Type your note\'s content here</string>
     <string name="notes_title">Note\'s Title</string>
     <string name="createnotes_button">Create Note</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="upload_photo_here">Touch photo to upload a new one</string>
 </resources>
