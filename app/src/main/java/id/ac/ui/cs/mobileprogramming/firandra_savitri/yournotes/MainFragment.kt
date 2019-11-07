@@ -66,16 +66,6 @@ class MainFragment : Fragment() {
         observeViewModel()
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-//        noteViewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
-//
-//        notes_rv.adapter = adapter
-//        notes_rv.layoutManager = GridLayoutManager(activity, 2)
-//
-//        observeViewModel()
-    }
-
 
     fun observeViewModel() {
         noteViewModel.getAllNotes().observe(this,
