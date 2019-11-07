@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -43,6 +44,7 @@ class DetailNote : Fragment() {
     fun observeViewModel() {
         viewModel.detaillNote(noteId+1).observe(this, Observer {
                 note -> note?.let{
+                notes_image.setImageURI(Uri.parse(note.image))
                 notes_title.text = note.title
                 notes_content.text = note.content
             }

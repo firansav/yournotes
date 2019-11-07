@@ -8,4 +8,5 @@
     <string name="notes_title">Note\'s Title</string>
     <string name="createnotes_button">Create Note</string>
     <string name="upload_photo_here">Touch photo to upload a new one</string>
+    <string name="notification">Welcome to YourNotes! Let\'s get started!</string>
 </resources>

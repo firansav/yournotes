@@ -13,7 +13,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/notes_detail_description_margin_left"
+                android:layout_marginRight="@dimen/notes_detail_description_margin_right">
 
             <TextView
                     android:id="@+id/notes_title"
@@ -40,9 +42,7 @@
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/notes_detail_description_margin_left"
                     android:layout_marginTop="0dp"
-                    android:layout_marginRight="@dimen/notes_detail_description_margin_right"
                     android:layout_marginBottom="@dimen/notes_detail_description_margin_bottom"
                     android:autoLink="web"
                     android:text="@string/notes_content" />

@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +24,7 @@ class NotesAdapter : RecyclerView.Adapter<NotesAdapter.NoteHolder>() {
 
     override fun onBindViewHolder(holder: NoteHolder, position: Int) {
         val currentNote = notes[position]
+        holder.view.note_image.setImageURI(Uri.parse(currentNote.image))
         holder.view.name.text = currentNote.title
         holder.view.setOnClickListener {
             Navigation.findNavController(it)

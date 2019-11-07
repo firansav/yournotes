@@ -85,6 +85,7 @@ class CreateNoteActivity : AppCompatActivity() {
     private fun saveNote() {
 
         val newNote = Notes(
+            imageList,
             addnote_title.text.toString(),
             addnote_description.text.toString()
         )

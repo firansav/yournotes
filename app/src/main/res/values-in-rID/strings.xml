@@ -8,4 +8,5 @@
     <string name="notes_title">Judul Note</string>
     <string name="createnotes_button">Buat Note</string>
     <string name="upload_photo_here">Ketuk foto untuk mengunggah foto</string>
+    <string name="notification">Selamat datang di YourNotes! Ayo mulai menulis!</string>
 </resources>

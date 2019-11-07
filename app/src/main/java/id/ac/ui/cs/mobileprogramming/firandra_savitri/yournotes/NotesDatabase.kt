@@ -5,7 +5,7 @@ import android.content.Context
 import android.os.AsyncTask
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-@Database(entities = [Notes::class], version = 1)
+@Database(entities = [Notes::class], version = 2)
 abstract class NotesDatabase : RoomDatabase() {
 
     abstract fun noteDao(): NotesDao
@@ -41,9 +41,9 @@ abstract class NotesDatabase : RoomDatabase() {
         private val noteDao = db?.noteDao()
 
         override fun doInBackground(vararg p0: Unit?) {
-            noteDao?.insert(Notes("Title 1", "Isi 1"))
-            noteDao?.insert(Notes("Title 2", "Isi 2"))
-            noteDao?.insert(Notes("Title 3", "Isi 3"))
+//            noteDao?.insert(Notes("Title 1", "Isi 1"))
+//            noteDao?.insert(Notes("Title 2", "Isi 2"))
+//            noteDao?.insert(Notes("Title 3", "Isi 3"))
         }
     }
 
