@@ -14,6 +14,7 @@
     <string name="gallery">Koleksi Foto</string>
     <string name="graphic_notes">Notes Grafis</string>
     <string name="cannot_create_note">Tolong isi semua bagian</string>
-    <string name="weather">Cuaca Sekarang</string>
     <string name="todays_weather">Cuaca hari ini di Jakarta:</string>
+    <string name="to_do_list">Untuk Dikerjakan</string>
+    <string name="easter_egg">Telur Paskah</string>
 </resources>

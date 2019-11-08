@@ -25,6 +25,9 @@
         <action
                 android:id="@+id/action_mainFragment_to_galleryFragment"
                 app:destination="@id/galleryFragment" />
+        <action
+                android:id="@+id/action_mainFragment_to_weatherFragment"
+                app:destination="@id/weatherFragment" />
     </fragment>
     <fragment
             android:id="@+id/createNote"
@@ -53,5 +56,19 @@
     <fragment
             android:id="@+id/galleryFragment"
             android:name="id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes.GalleryFragment"
-            android:label="GalleryFragment" />
+            android:label="GalleryFragment"
+            tools:layout="@layout/fragment_photos">
+        <action
+                android:id="@+id/action_galleryFragment_to_mainFragment"
+                app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/weatherFragment"
+            android:name="id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes.EasterEggFragment"
+            android:label="WeatherFragment"
+            tools:layout="@layout/fragment_weather">
+        <action
+                android:id="@+id/action_weatherFragment_to_mainFragment"
+                app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>

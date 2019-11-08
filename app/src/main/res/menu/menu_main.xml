@@ -6,16 +6,4 @@
           android:title="@string/change_language"
           android:orderInCategory="100"
             app:showAsAction="never"/>
-    <item android:id="@+id/menu_note"
-            android:title="@string/notes"
-            android:orderInCategory="100"
-            app:showAsAction="never"/>
-    <item android:id="@+id/gal"
-            android:title="@string/gallery"
-            android:orderInCategory="100"
-            app:showAsAction="never"/>
-    <item android:id="@+id/weather"
-            android:title="@string/weather"
-            android:orderInCategory="100"
-            app:showAsAction="never"/>
 </menu>
