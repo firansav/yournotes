@@ -20,6 +20,9 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import com.google.android.material.navigation.NavigationView
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -38,7 +41,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -51,9 +53,25 @@ class MainActivity : AppCompatActivity() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+
+
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.language -> true
+            R.id.menu_note -> true
+            R.id.gal -> true
+            R.id.weather -> true
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+//    fun getWeather(): String{
+//        var link = "https://www.metaweather.com/api/location/1047378/"
+//
+//        return ""
+//    }
+
+//    fun replaceFragment(fragment: Fragment, tag: String) {
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.container, fragment, tag).addToBackStack("").commit()
+//    }
 }

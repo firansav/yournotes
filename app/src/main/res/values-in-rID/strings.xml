@@ -9,4 +9,11 @@
     <string name="createnotes_button">Buat Note</string>
     <string name="upload_photo_here">Ketuk foto untuk mengunggah foto</string>
     <string name="notification">Selamat datang di YourNotes! Ayo mulai menulis!</string>
+    <string name="change_language">Ganti Bahasa</string>
+    <string name="notes">Notes</string>
+    <string name="gallery">Koleksi Foto</string>
+    <string name="graphic_notes">Notes Grafis</string>
+    <string name="cannot_create_note">Tolong isi semua bagian</string>
+    <string name="weather">Cuaca Sekarang</string>
+    <string name="todays_weather">Cuaca hari ini di Jakarta:</string>
 </resources>

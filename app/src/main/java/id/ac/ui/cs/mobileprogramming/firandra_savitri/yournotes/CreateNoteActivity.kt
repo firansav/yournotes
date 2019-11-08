@@ -24,13 +24,12 @@ class CreateNoteActivity : AppCompatActivity() {
 
         private val IMAGE_PICK_CODE = 1000;
         private val PERMISSION_CODE = 1001;
-
-        private val image = false;
     }
 
     var id = 0;
     private lateinit var viewModel: NotesViewModel
     private var imageList = ""
+    private var image = false;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,8 +40,8 @@ class CreateNoteActivity : AppCompatActivity() {
 
 
         button_createnote.setOnClickListener {
-            if (addnote_title.text.toString().trim().isBlank() || addnote_description.text.toString().trim().isBlank()) {
-                Toast.makeText(this, "Can not insert empty note!", Toast.LENGTH_SHORT).show()
+            if (addnote_title.text.toString().trim().isBlank() || addnote_description.text.toString().trim().isBlank() || imageList.isEmpty()) {
+                Toast.makeText(this, R.string.cannot_create_note, Toast.LENGTH_SHORT).show()
             } else {
                 saveNote()
 
@@ -80,6 +79,7 @@ class CreateNoteActivity : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         startActivityForResult(intent, IMAGE_PICK_CODE)
+        image = true
     }
 
     private fun saveNote() {
@@ -89,6 +89,11 @@ class CreateNoteActivity : AppCompatActivity() {
             addnote_title.text.toString(),
             addnote_description.text.toString()
         )
+
+        val newPhoto = Photo(
+            imageList
+        )
+
 
         viewModel.insert(newNote)
         Toast.makeText(this, "Note created", Toast.LENGTH_SHORT).show()

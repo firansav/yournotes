@@ -45,7 +45,7 @@
 
             <ImageView
                     android:id="@+id/imageview_note_photo"
-                    android:src="@drawable/default_pic"
+                    android:src="@drawable/ic_insert_photo"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:layout_gravity="center"

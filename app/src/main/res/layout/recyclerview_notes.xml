@@ -15,7 +15,7 @@
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:contentDescription="@null"
-                android:scaleType="centerInside" />
+                android:scaleType="centerCrop" />
 
         <TextView
                 android:id="@+id/name"
@@ -23,13 +23,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorDarkLowOpacity"
                 android:minHeight="@dimen/recycler_item_footer_height_min"
                 android:paddingLeft="@dimen/recycler_item_footer_padding"
                 android:paddingTop="@dimen/recycler_item_footer_padding"
                 android:paddingRight="@dimen/recycler_item_footer_padding"
                 android:paddingBottom="@dimen/recycler_item_footer_padding"
                 android:text="@string/notes_title" />
-
     </FrameLayout>
 </layout>

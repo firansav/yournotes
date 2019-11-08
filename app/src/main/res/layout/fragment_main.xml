@@ -9,18 +9,16 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:navGraph="@navigation/navigation_main">
 
-<!--    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
-<!--    <fragment-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:id="@+id/fragment"-->
-<!--            app:navGraph="@navigation/navigation_main"/>-->
+<!--    <include layout="@layout/fragment_weather"-->
+<!--            android:id="@+id/weather_layout"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/notes_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" />
+            android:orientation="vertical"/>
+
+<!--    <include layout="@layout/fragment_photos"/>-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
@@ -30,6 +28,6 @@
             android:layout_margin="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@android:drawable/ic_input_add"/>
+            app:srcCompat="@drawable/ic_create"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

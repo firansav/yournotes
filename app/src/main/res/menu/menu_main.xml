@@ -2,8 +2,20 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes.MainActivity">
-    <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
+    <item android:id="@+id/language"
+          android:title="@string/change_language"
           android:orderInCategory="100"
-          app:showAsAction="never"/>
+            app:showAsAction="never"/>
+    <item android:id="@+id/menu_note"
+            android:title="@string/notes"
+            android:orderInCategory="100"
+            app:showAsAction="never"/>
+    <item android:id="@+id/gal"
+            android:title="@string/gallery"
+            android:orderInCategory="100"
+            app:showAsAction="never"/>
+    <item android:id="@+id/weather"
+            android:title="@string/weather"
+            android:orderInCategory="100"
+            app:showAsAction="never"/>
 </menu>
