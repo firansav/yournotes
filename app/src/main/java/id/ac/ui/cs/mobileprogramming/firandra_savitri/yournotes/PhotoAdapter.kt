@@ -4,10 +4,8 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 
-import kotlinx.android.synthetic.main.recyclerview_notes.view.*
 import kotlinx.android.synthetic.main.recyclerview_photo.view.*
 
 class PhotoAdapter : RecyclerView.Adapter<PhotoAdapter.PhotoHolder>() {

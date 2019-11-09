@@ -12,6 +12,7 @@ class ViewPagerAdapter(fm: FragmentManager, nContext: Context?) : FragmentPagerA
     private val pages = listOf(
         MainFragment(),
         GalleryFragment(),
+        FactsFragment(),
         EasterEggFragment()
     )
 
@@ -28,6 +29,7 @@ class ViewPagerAdapter(fm: FragmentManager, nContext: Context?) : FragmentPagerA
         return when(position){
             0 -> context?.getString(R.string.notes)
             1 -> context?.getString(R.string.gallery)
+            2 -> context?.getString(R.string.fact_tab)
             else -> context?.getString(R.string.easter_egg)
         }
     }
