@@ -13,7 +13,7 @@ class PhotoViewModel(application: Application) : AndroidViewModel(application) {
     fun insert(note: Photo) {
         repository.insert(note)
     }
-
+    
     fun getAllPhotos(): LiveData<List<Photo>> {
         return allPhotos
     }
@@ -22,5 +22,5 @@ class PhotoViewModel(application: Application) : AndroidViewModel(application) {
         detailPhotos = repository.detailPhoto(listId)
         return detailPhotos
     }
-
+    
 }

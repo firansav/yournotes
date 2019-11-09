@@ -21,7 +21,7 @@ class PhotoRepository(application: Application) {
     }
 
     fun insert(note: Photo) {
-        val inserPhotoAsyncTask = InsertPhotoAsyncTask(photoDao).execute(note)
+        val insertPhotoAsyncTask = InsertPhotoAsyncTask(photoDao).execute(note)
     }
 
     fun getAllPhotos(): LiveData<List<Photo>> {

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
@@ -39,5 +40,12 @@ class GalleryFragment : Fragment() {
         photos_rv.adapter = adapter
 
         photoViewModel = ViewModelProviders.of(this).get(PhotoViewModel::class.java)
+
+        observeViewModel()
+    }
+
+    fun observeViewModel() {
+        photoViewModel.getAllPhotos().observe(this,
+            Observer<List<Photo>> { t -> adapter.setPhoto(t!!) })
     }
 }

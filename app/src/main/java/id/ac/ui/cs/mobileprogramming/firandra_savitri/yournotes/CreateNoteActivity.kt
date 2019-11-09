@@ -28,6 +28,7 @@ class CreateNoteActivity : AppCompatActivity() {
 
     var id = 0;
     private lateinit var viewModel: NotesViewModel
+    private lateinit var photoViewModel: PhotoViewModel
     private var imageList = ""
     private var image = false;
 
@@ -36,6 +37,7 @@ class CreateNoteActivity : AppCompatActivity() {
         setContentView(R.layout.activity_create_notes)
 
         viewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
+        photoViewModel = ViewModelProviders.of(this).get(PhotoViewModel::class.java)
 //        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_close)
 
 
@@ -94,8 +96,8 @@ class CreateNoteActivity : AppCompatActivity() {
             imageList
         )
 
-
         viewModel.insert(newNote)
+        photoViewModel.insert(newPhoto)
         Toast.makeText(this, "Note created", Toast.LENGTH_SHORT).show()
     }
 

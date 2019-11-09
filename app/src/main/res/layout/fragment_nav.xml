@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/notes_detail_name_margin_top"
+        android:layout_marginBottom="@dimen/notes_detail_description_margin_bottom">
+
+    <Button
+            android:id="@+id/b_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/recycler_item_footer_padding"
+            android:text="@string/notes"/>
+
+    <Button
+            android:id="@+id/b_gal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/recycler_item_footer_padding"
+            android:text="@string/gallery"/>
+
+    <Button
+            android:id="@+id/b_tdl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/recycler_item_footer_padding"
+            android:text="@string/to_do_list"/>
+
+    <Button
+            android:id="@+id/b_surprise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/recycler_item_footer_padding"
+            android:text="@string/easter_egg"/>
+
+</LinearLayout>

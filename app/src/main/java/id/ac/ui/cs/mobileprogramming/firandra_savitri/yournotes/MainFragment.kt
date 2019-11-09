@@ -52,19 +52,6 @@ class MainFragment : Fragment() {
             Observer<List<Notes>> { t -> adapter.setNotes(t!!) })
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        noteViewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
-
-        val activity = activity as Context
-
-        notes_rv.adapter = adapter
-        notes_rv.layoutManager = GridLayoutManager(activity, 2)
-
-        observeViewModel()
-    }
-
-
     fun observeViewModel() {
         noteViewModel.getAllNotes().observe(this,
             Observer<List<Notes>> { t -> adapter.setNotes(t!!) })

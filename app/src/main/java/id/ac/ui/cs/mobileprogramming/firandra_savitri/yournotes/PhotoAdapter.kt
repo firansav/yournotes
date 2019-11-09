@@ -8,6 +8,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 
 import kotlinx.android.synthetic.main.recyclerview_notes.view.*
+import kotlinx.android.synthetic.main.recyclerview_photo.view.*
 
 class PhotoAdapter : RecyclerView.Adapter<PhotoAdapter.PhotoHolder>() {
     private var photos: List<Photo> = ArrayList()
@@ -17,13 +18,13 @@ class PhotoAdapter : RecyclerView.Adapter<PhotoAdapter.PhotoHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoHolder {
         val inflater = LayoutInflater.from(parent.context)
         //@TODO: ubah layout recycler view
-        val view = inflater.inflate(R.layout.recyclerview_notes, parent, false)
+        val view = inflater.inflate(R.layout.recyclerview_photo, parent, false)
         return PhotoHolder(view)
     }
 
     override fun onBindViewHolder(holder: PhotoHolder, position: Int) {
         val currentPhoto = photos[position]
-        holder.view.note_image.setImageURI(Uri.parse(currentPhoto.image))
+        holder.view.photo_image.setImageURI(Uri.parse(currentPhoto.image))
     }
 
     override fun getItemCount(): Int {
