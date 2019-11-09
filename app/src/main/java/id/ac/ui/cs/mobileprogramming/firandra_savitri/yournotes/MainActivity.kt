@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        viewpager_main.adapter = MyPagerAdapter(supportFragmentManager, applicationContext)
+        viewpager_main.adapter = ViewPagerAdapter(supportFragmentManager, applicationContext)
         tabs.setupWithViewPager(viewpager_main)
     }
 
@@ -35,22 +35,4 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-    fun toGallery(): Boolean {
-        if (supportFragmentManager.beginTransaction().add(R.id.fragment_gal, GalleryFragment.newInstance(), "photos").commit() != null) {
-            return true
-        }
-        return false
-    }
-
-//    fun getWeather(): String{
-//        var link = "https://www.metaweather.com/api/location/1047378/"
-//
-//        return ""
-//    }
-
-//    fun replaceFragment(fragment: Fragment, tag: String) {
-//        supportFragmentManager.beginTransaction()
-//            .replace(R.id.container, fragment, tag).addToBackStack("").commit()
-//    }
 }

@@ -1,14 +1,12 @@
 package id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes
 
+import android.content.Context
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-
-import id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes.R
 import kotlinx.android.synthetic.main.recyclerview_notes.view.*
 
 class NotesAdapter : RecyclerView.Adapter<NotesAdapter.NoteHolder>() {

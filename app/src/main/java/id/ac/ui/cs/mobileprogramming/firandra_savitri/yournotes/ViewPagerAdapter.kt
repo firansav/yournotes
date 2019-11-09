@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
-class MyPagerAdapter(fm: FragmentManager, nContext: Context?) : FragmentPagerAdapter(fm){
+class ViewPagerAdapter(fm: FragmentManager, nContext: Context?) : FragmentPagerAdapter(fm){
 
     val context = nContext
 
