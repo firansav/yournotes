@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes
 
+
 import androidx.room.*
 
 @Entity(tableName = "photos_table")

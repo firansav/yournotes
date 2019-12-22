@@ -2,6 +2,7 @@ package id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes
 
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,8 +22,13 @@ class FactsFragment : Fragment() {
         fun newInstance() = FactsFragment()
     }
 
+    init {
+        System.loadLibrary("yournotes")
+    }
+
     private lateinit var factViewModel: FactViewModel
     private val adapter = FactAdapter()
+    external fun randomizer() : Int
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +47,8 @@ class FactsFragment : Fragment() {
         fact_rv.adapter = adapter
 
         factViewModel = ViewModelProviders.of(this).get(FactViewModel::class.java)
+
+        val idxFact = randomizer()
 
         observeViewModel()
     }
