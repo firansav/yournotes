@@ -1,9 +1,12 @@
 package id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes
 
+import android.content.Context
+import android.net.wifi.WifiManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -16,6 +19,21 @@ class MainActivity : AppCompatActivity() {
 
         viewpager_main.adapter = ViewPagerAdapter(supportFragmentManager, applicationContext)
         tabs.setupWithViewPager(viewpager_main)
+
+        val wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
+        if (!wifiManager.isWifiEnabled) {
+            val builder = AlertDialog.Builder(this)
+            builder.setMessage("YourNotes requires internet connection to maximize the functionality of the application, please turn on the wifi connection.").setTitle("Wi-Fi Required")
+            builder.setPositiveButton("Enable Wi-Fi") { _, _ ->
+                wifiManager.isWifiEnabled = true
+            }
+            builder.setNegativeButton("No, Thanks") {_, _ ->
+
+            }
+
+            val dialog = builder.create()
+            dialog.show()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
