@@ -1,12 +1,17 @@
 package id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes
 
+import android.Manifest
 import android.content.Context
+import android.content.pm.PackageManager
 import android.net.wifi.WifiManager
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -33,6 +38,48 @@ class MainActivity : AppCompatActivity() {
 
             val dialog = builder.create()
             dialog.show()
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(
+                    this.applicationContext,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+                ) == PackageManager.PERMISSION_DENIED
+            ) {
+                if (ActivityCompat.shouldShowRequestPermissionRationale(
+                        this,
+                        Manifest.permission.READ_EXTERNAL_STORAGE
+                    )
+                ) {
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(
+                            this,
+                            Manifest.permission.READ_EXTERNAL_STORAGE
+                        )
+                    ) {
+
+                        val builder = android.app.AlertDialog.Builder(this.applicationContext)
+                        builder.setMessage("Permission to access the external storage is needed")
+                            .setTitle("Permission Needed")
+
+                        builder.setPositiveButton("OK") { dialog, id ->
+                            ActivityCompat.requestPermissions(
+                                this,
+                                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                                1001
+                            )
+                        }
+
+                        val dialog = builder.create()
+                        dialog.show()
+                    }
+                } else {
+                    ActivityCompat.requestPermissions(
+                        this,
+                        arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                        1001
+                    )
+                }
+            }
         }
     }
 

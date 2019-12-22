@@ -48,7 +48,7 @@ class FactsFragment : Fragment() {
 
         factViewModel = ViewModelProviders.of(this).get(FactViewModel::class.java)
 
-        val idxFact = randomizer()
+//        val idxFact = randomizer()
 
         observeViewModel()
     }

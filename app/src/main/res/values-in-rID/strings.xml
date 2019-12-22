@@ -19,4 +19,10 @@
     <string name="easter_egg">Telur Paskah</string>
     <string name="play_video">Ketuk untuk Kejutan</string>
     <string name="fact_tab">Fakta</string>
+    <string name="created">Note Dibuat</string>
+    <string name="permission_needed">Diperlukan izin untuk mengakses penyimpanan eksternal</string>
+    <string name="permission">Dibutuhkan Akses</string>
+    <string name="denied">Akses ditolak</string>
+    <string name="no_thanks">Tidak, Terima Kasih</string>
+    <string name="enable">Aktifkan Wi-Fi</string>
 </resources>

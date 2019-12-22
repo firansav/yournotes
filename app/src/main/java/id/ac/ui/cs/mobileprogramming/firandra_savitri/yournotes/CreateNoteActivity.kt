@@ -24,8 +24,8 @@ class CreateNoteActivity : AppCompatActivity() {
         const val EXTRA_DESCRIPTION =
             "d.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes.EXTRA_DESCRIPTION"
 
-        private val IMAGE_PICK_CODE = 1000;
-        private val PERMISSION_CODE = 1001;
+        private val IMAGE_PICK_CODE = 1000
+        private val PERMISSION_CODE = 1001
     }
 
     var id = 0;

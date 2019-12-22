@@ -19,4 +19,10 @@
     <string name="to_do_list">To-Do List</string>
     <string name="play_video">Click for a Surprise</string>
     <string name="fact_tab">Facts</string>
+    <string name="created">Note Created</string>
+    <string name="permission_needed">Permission to access the external storage is needed</string>
+    <string name="permission">Permission Needed</string>
+    <string name="denied">Permission denied</string>
+    <string name="enable">Enable Wi-Fi</string>
+    <string name="no_thanks">No, Thanks</string>
 </resources>

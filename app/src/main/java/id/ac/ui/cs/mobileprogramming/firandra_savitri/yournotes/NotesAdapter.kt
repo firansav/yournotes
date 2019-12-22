@@ -1,16 +1,19 @@
 package id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes
 
+import android.Manifest
 import android.content.Context
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.recyclerview_notes.view.*
 
 class NotesAdapter : RecyclerView.Adapter<NotesAdapter.NoteHolder>() {
     private var notes: List<Notes> = ArrayList()
+    private val PERMISSION_CODE = 1001
 
     class NoteHolder(var view: View) : RecyclerView.ViewHolder(view)
 
