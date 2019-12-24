@@ -24,10 +24,12 @@
     <string name="permission">Permission Needed</string>
     <string name="denied">Permission denied</string>
     <string name="enable">Enable Wi-Fi</string>
+    <string name="need_wifi">Wi-Fi Required</string>
     <string name="no_thanks">No, Thanks</string>
     <string name="mandatory">YourNotes requires internet connection to run, please turn on the wifi connection.</string>
     <string name="play_music">Play Music</string>
     <string name="stop_music">Stop Music</string>
     <string name="played">Music Played</string>
     <string name="stopped">Music Stopped</string>
+    <string name="random_fact">Random Fact</string>
 </resources>

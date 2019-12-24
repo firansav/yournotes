@@ -12,4 +12,5 @@
     <dimen name="notes_detail_description_margin_left">32dp</dimen>
     <dimen name="notes_detail_description_margin_right">24dp</dimen>
     <dimen name="notes_detail_description_margin_bottom">16dp</dimen>
+    <dimen name="title_font">40sp</dimen>
 </resources>

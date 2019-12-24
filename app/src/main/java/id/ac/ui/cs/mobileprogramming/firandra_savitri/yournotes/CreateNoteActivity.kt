@@ -24,8 +24,8 @@ class CreateNoteActivity : AppCompatActivity() {
         const val EXTRA_DESCRIPTION =
             "d.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes.EXTRA_DESCRIPTION"
 
-        private val IMAGE_PICK_CODE = 1000
-        private val PERMISSION_CODE = 1001
+        private const val IMAGE_PICK_CODE = 1000
+        private const val PERMISSION_CODE = 1001
     }
 
     var id = 0;
@@ -73,8 +73,8 @@ class CreateNoteActivity : AppCompatActivity() {
                         ) {
 
                             val builder = AlertDialog.Builder(this.applicationContext)
-                            builder.setMessage("Permission to access the external storage is needed")
-                                .setTitle("Permission Needed")
+                            builder.setMessage(getString(R.string.permission_needed))
+                                .setTitle(getString(R.string.permission))
 
                             builder.setPositiveButton("OK") { dialog, id ->
                                 ActivityCompat.requestPermissions(
@@ -127,7 +127,7 @@ class CreateNoteActivity : AppCompatActivity() {
 
         viewModel.insert(newNote)
         photoViewModel.insert(newPhoto)
-        Toast.makeText(this, "Note created", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.created), Toast.LENGTH_SHORT).show()
     }
 
     override fun onRequestPermissionsResult(
@@ -144,7 +144,7 @@ class CreateNoteActivity : AppCompatActivity() {
                     pickImageFromGallery()
                 } else {
                     //permission from popup denied
-                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.denied), Toast.LENGTH_SHORT).show()
                 }
             }
         }

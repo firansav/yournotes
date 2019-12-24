@@ -3,10 +3,22 @@
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/fact_rv"
+    <TextView
+            android:id="@+id/title_fact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:text="@string/random_fact"
+            android:textSize="@dimen/title_font"/>
+
+    <TextView
+            android:id="@+id/fact_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/fact_rv"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical" />-->
 
 </LinearLayout>

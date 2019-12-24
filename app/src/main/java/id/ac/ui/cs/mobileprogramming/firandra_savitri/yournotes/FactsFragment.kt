@@ -43,12 +43,14 @@ class FactsFragment : Fragment() {
 
         super.onViewCreated(view, savedInstanceState)
 
-        fact_rv.layoutManager = GridLayoutManager(activity, 1)
-        fact_rv.adapter = adapter
-
         factViewModel = ViewModelProviders.of(this).get(FactViewModel::class.java)
-
 //        val idxFact = randomizer()
+
+        factViewModel.detailFact(3).observe(this, Observer {fact ->
+            fact?.let {
+                fact_rv.text = fact.fact
+            }
+        })
 
         observeViewModel()
     }
