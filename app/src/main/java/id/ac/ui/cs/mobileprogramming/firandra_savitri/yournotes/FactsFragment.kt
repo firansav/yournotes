@@ -44,9 +44,10 @@ class FactsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         factViewModel = ViewModelProviders.of(this).get(FactViewModel::class.java)
-//        val idxFact = randomizer()
 
-        factViewModel.detailFact(3).observe(this, Observer {fact ->
+        val idxFact = randomizer()
+
+        factViewModel.detailFact(idxFact).observe(this, Observer {fact ->
             fact?.let {
                 fact_rv.text = fact.fact
             }
