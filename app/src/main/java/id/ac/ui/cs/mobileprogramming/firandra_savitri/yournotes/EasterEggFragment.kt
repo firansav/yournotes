@@ -1,11 +1,14 @@
 package id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes
 
+import android.content.Context
 import android.content.Intent
+import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.google.android.youtube.player.YouTubeStandalonePlayer
 import kotlinx.android.synthetic.main.activity_main.*
@@ -38,8 +41,22 @@ class EasterEggFragment : Fragment() {
 //        weather_temp.text = str
 
         button_play.setOnClickListener {
-            val intent = YouTubeStandalonePlayer.createVideoIntent(activity, apiKey, id)
-            startActivity(intent)
+            val wifiManager = context?.getSystemService(Context.WIFI_SERVICE) as WifiManager
+            if (!wifiManager.isWifiEnabled) {
+                val builder = AlertDialog.Builder(context!!)
+                builder.setMessage(getString(R.string.mandatory)).setTitle(getString(R.string.need_wifi))
+                builder.setPositiveButton(getString(R.string.enable)) { _, _ ->
+                    wifiManager.isWifiEnabled = true
+                }
+
+                val dialog = builder.create()
+                dialog.show()
+            }
+
+            if (wifiManager.isWifiEnabled) {
+                val intent = YouTubeStandalonePlayer.createVideoIntent(activity, apiKey, id)
+                startActivity(intent)
+            }
         }
 
         button_play_music.setOnClickListener {

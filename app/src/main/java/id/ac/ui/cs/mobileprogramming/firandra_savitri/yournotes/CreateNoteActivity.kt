@@ -53,55 +53,7 @@ class CreateNoteActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-
-//        imageview_note_photo.setOnClickListener {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//                if (checkSelfPermission(
-//                        this.applicationContext,
-//                        Manifest.permission.READ_EXTERNAL_STORAGE
-//                    ) == PackageManager.PERMISSION_DENIED
-//                ) {
-//                    if (ActivityCompat.shouldShowRequestPermissionRationale(
-//                            this,
-//                            Manifest.permission.READ_EXTERNAL_STORAGE
-//                        )
-//                    ) {
-//                        if (ActivityCompat.shouldShowRequestPermissionRationale(
-//                                this,
-//                                Manifest.permission.READ_EXTERNAL_STORAGE
-//                            )
-//                        ) {
-//
-//                            val builder = AlertDialog.Builder(this.applicationContext)
-//                            builder.setMessage("Permission to access the external storage is needed for app to access your gallery.")
-//                                .setTitle("Permission required")
-//
-//                            builder.setPositiveButton("OK") { dialog, id ->
-//                                ActivityCompat.requestPermissions(
-//                                    this,
-//                                    arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-//                                    PERMISSION_CODE
-//                                )
-//                            }
-//
-//                            val dialog = builder.create()
-//                            dialog.show()
-//                        }
-//                    } else {
-//                        ActivityCompat.requestPermissions(
-//                            this,
-//                            arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-//                            PERMISSION_CODE
-//                        )
-//                    }
-//                } else {
-//                    pickImageFromGallery()
-//                }
-//            } else {
-//                pickImageFromGallery()
-//            }
-//        }
-
+        
         imageview_note_photo.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) ==
@@ -109,8 +61,8 @@ class CreateNoteActivity : AppCompatActivity() {
                     if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                             Manifest.permission.READ_EXTERNAL_STORAGE)) {
                         val builder = AlertDialog.Builder(this)
-                        builder.setMessage("Permission to access the external storage is needed for app to access your gallery.")
-                            .setTitle("Permission required")
+                        builder.setMessage(getString(R.string.permission_needed))
+                            .setTitle(getString(R.string.permission))
 
                         builder.setPositiveButton("OK"
                         ) { dialog, id ->
