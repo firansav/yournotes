@@ -32,9 +32,6 @@ class MainActivity : AppCompatActivity() {
             builder.setPositiveButton("Enable Wi-Fi") { _, _ ->
                 wifiManager.isWifiEnabled = true
             }
-            builder.setNegativeButton("No, Thanks") {_, _ ->
-
-            }
 
             val dialog = builder.create()
             dialog.show()

@@ -25,4 +25,9 @@
     <string name="denied">Permission denied</string>
     <string name="enable">Enable Wi-Fi</string>
     <string name="no_thanks">No, Thanks</string>
+    <string name="mandatory">YourNotes requires internet connection to run, please turn on the wifi connection.</string>
+    <string name="play_music">Play Music</string>
+    <string name="stop_music">Stop Music</string>
+    <string name="played">Music Played</string>
+    <string name="stopped">Music Stopped</string>
 </resources>

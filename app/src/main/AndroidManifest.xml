@@ -37,6 +37,7 @@
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <receiver android:name=".NotificationHelper"/>
+        <service android:name=".MusicService"/>
     </application>
 
 </manifest>

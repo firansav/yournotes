@@ -4,46 +4,25 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
-<!--    <TextView-->
-<!--            android:layout_marginTop="@dimen/notes_detail_name_margin_top"-->
-<!--            android:layout_marginBottom="@dimen/notes_detail_description_margin_bottom"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:textSize="16sp"-->
-<!--            android:text="@string/todays_weather"-->
-<!--            android:textAlignment="center"-->
-<!--            android:layout_gravity="center_vertical"/>-->
-
-<!--    <ImageView-->
-<!--            android:id="@+id/weather_pict"-->
-<!--            android:layout_marginTop="@dimen/notes_detail_name_margin_top"-->
-<!--            android:layout_marginBottom="@dimen/notes_detail_description_margin_bottom"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_width="28dp"-->
-<!--            android:layout_height="28dp"-->
-<!--            android:src="@drawable/ic_insert_photo"/>-->
-
-<!--    <TextView-->
-<!--            android:id="@+id/weather_temp"-->
-<!--            android:layout_marginTop="@dimen/notes_detail_name_margin_top"-->
-<!--            android:layout_marginBottom="@dimen/notes_detail_description_margin_bottom"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Celcius"-->
-<!--            android:textSize="28dp"-->
-<!--            android:layout_gravity="center"/>-->
-
-<!--    <com.google.android.youtube.player.YouTubePlayerView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:id="@+id/youtube"-->
-<!--            android:layout_gravity="center_vertical"/>-->
-
     <Button
             android:id="@+id/button_play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/play_video"
+            android:layout_gravity="center"/>
+
+    <Button
+            android:id="@+id/button_play_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/play_music"
+            android:layout_gravity="center"/>
+
+    <Button
+            android:id="@+id/button_stop_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stop_music"
             android:layout_gravity="center"/>
 
 </LinearLayout>

@@ -1,9 +1,11 @@
 package id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.youtube.player.YouTubeStandalonePlayer
 import kotlinx.android.synthetic.main.activity_main.*
@@ -38,6 +40,16 @@ class EasterEggFragment : Fragment() {
         button_play.setOnClickListener {
             val intent = YouTubeStandalonePlayer.createVideoIntent(activity, apiKey, id)
             startActivity(intent)
+        }
+
+        button_play_music.setOnClickListener {
+            Toast.makeText(activity, "Music Played", Toast.LENGTH_SHORT).show()
+            activity?.startService(Intent(activity, MusicService::class.java))
+        }
+
+        button_stop_music.setOnClickListener {
+            Toast.makeText(activity, "Music Stopped", Toast.LENGTH_SHORT).show()
+            activity?.stopService(Intent(activity, MusicService::class.java))
         }
     }
 }

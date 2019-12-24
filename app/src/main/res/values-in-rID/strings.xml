@@ -25,4 +25,9 @@
     <string name="denied">Akses ditolak</string>
     <string name="no_thanks">Tidak, Terima Kasih</string>
     <string name="enable">Aktifkan Wi-Fi</string>
+    <string name="mandatory">YourNotes membutuhkan koneksi internet untuk dapat menggunakan aplikasi. Yuk aktifkan Wi-Fi mu!</string>
+    <string name="play_music">Putar Musik</string>
+    <string name="stop_music">Berhentikan Musik</string>
+    <string name="played">Musik Dimainkan</string>
+    <string name="stopped">Musik Diberhentikan</string>
 </resources>
