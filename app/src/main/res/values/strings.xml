@@ -32,4 +32,6 @@
     <string name="played">Music Played</string>
     <string name="stopped">Music Stopped</string>
     <string name="random_fact">Random Fact</string>
+    <string name="recurring_notif">Have you written in YourNotes today?</string>
+    <string name="tap_here">Tap here to open YourNotes and write your own note.</string>
 </resources>
