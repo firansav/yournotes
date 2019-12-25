@@ -24,9 +24,9 @@ class SplashScreenGLRenderer(val context: Context) : GLSurfaceView.Renderer {
 
         val squareCoords = floatArrayOf(
             0f, 1f, 0.0f,      // top left
-            -0.2f, 0f, 0.0f,     // bottom left
+            -0.2f, 0f, 0.0f,   // bottom left
             0f, -1f, 0.0f,     // bottom right
-            0.2f, 0f, 0.0f       // top right
+            0.2f, 0f, 0.0f     // top right
         )
         val color = floatArrayOf(0.768627451f, 0.768627451f, 0.768627451f, 1.0f)
 

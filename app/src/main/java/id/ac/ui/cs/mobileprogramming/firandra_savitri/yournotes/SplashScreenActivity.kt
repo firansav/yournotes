@@ -17,8 +17,8 @@ class SplashScreenActivity : AppCompatActivity() {
     private val SPLASH_TIME_OUT:Long = 5000
     private val notificationChannelId = "10001"
     private val defaultNotificationChannelId = "default"
-    private val delay:Long = 10000
-    private val delay2:Long = 60000
+    private val delay:Long = 60000
+    private val delay2:Long = 80000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
