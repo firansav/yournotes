@@ -20,7 +20,6 @@ class SplashScreenActivity : AppCompatActivity() {
     private val delay:Long = 10000
     private val delay2:Long = 60000
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splashscreen)

@@ -37,9 +37,6 @@ class EasterEggFragment : Fragment() {
 
         fragment.notes_rv.visibility = View.GONE
 
-//        var str = sendGetRequest()
-//        weather_temp.text = str
-
         button_play.setOnClickListener {
             val wifiManager = context?.getSystemService(Context.WIFI_SERVICE) as WifiManager
             if (!wifiManager.isWifiEnabled) {
