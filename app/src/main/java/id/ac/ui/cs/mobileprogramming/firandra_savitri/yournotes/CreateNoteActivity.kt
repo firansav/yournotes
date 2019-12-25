@@ -53,7 +53,7 @@ class CreateNoteActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-        
+
         imageview_note_photo.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) ==

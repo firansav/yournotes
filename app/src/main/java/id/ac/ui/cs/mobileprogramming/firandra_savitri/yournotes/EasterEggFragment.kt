@@ -60,13 +60,15 @@ class EasterEggFragment : Fragment() {
         }
 
         button_play_music.setOnClickListener {
-            Toast.makeText(activity, "Music Played", Toast.LENGTH_SHORT).show()
-            activity?.startService(Intent(activity, MusicService::class.java))
-        }
-
-        button_stop_music.setOnClickListener {
-            Toast.makeText(activity, "Music Stopped", Toast.LENGTH_SHORT).show()
-            activity?.stopService(Intent(activity, MusicService::class.java))
+            if (button_play_music.text == getString(R.string.play_music)) {
+                Toast.makeText(activity, getString(R.string.played), Toast.LENGTH_SHORT).show()
+                activity?.startService(Intent(activity, MusicService::class.java))
+                button_play_music.text = getString(R.string.stop_music)
+            } else {
+                Toast.makeText(activity, getString(R.string.stopped), Toast.LENGTH_SHORT).show()
+                activity?.stopService(Intent(activity, MusicService::class.java))
+                button_play_music.text = getString(R.string.play_music)
+            }
         }
     }
 }
