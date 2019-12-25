@@ -37,8 +37,7 @@ class SplashScreenGLRenderer(val context: Context) : GLSurfaceView.Renderer {
         // Redraw background color
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT)
 
-        rotateSquare(square, 1)
-//        rotateSquare(mSquare2, -1)
+        rotate(square, 1)
     }
 
     override fun onSurfaceChanged(unused: GL10, width: Int, height: Int) {
@@ -50,12 +49,13 @@ class SplashScreenGLRenderer(val context: Context) : GLSurfaceView.Renderer {
         Matrix.frustumM(projectionMatrix, 0, -ratio, ratio, -1f, 1f, 3f, 7f)
     }
 
-    private fun rotateSquare(square: Square, direction: Int) {
+    private fun rotate(square: Square, direction: Int) {
         Matrix.setIdentityM(modelMatrix, 0) // initialize to identity matrix
         Matrix.translateM(modelMatrix, 0, direction * dx, 0f, 0f) // translation to the left
 
         // Set the camera position (View matrix)
-        Matrix.setLookAtM(viewMatrix, 0, 0f, 0f, -3f, 0f, 0f, 0f, 0f, 1.0f, 0.0f)
+        Matrix.setLookAtM(viewMatrix, 0, 0f, 0f, -3f, 0f,
+            0f, 0f, 0f, 1.0f, 0.0f)
 
         // Calculate the projection and view transformation
         Matrix.multiplyMM(mvpMatrix, 0, projectionMatrix, 0, viewMatrix, 0)
@@ -70,7 +70,6 @@ class SplashScreenGLRenderer(val context: Context) : GLSurfaceView.Renderer {
         tempMatrix = mvpMatrix.clone()
         Matrix.multiplyMM(mvpMatrix, 0, tempMatrix, 0, modelMatrix, 0)
         square.draw(mvpMatrix)
-
     }
 
 }
