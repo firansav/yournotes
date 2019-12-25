@@ -8,13 +8,17 @@
         android:gravity="center"
         tools:context=".SplashScreenActivity">
 
+    <id.ac.ui.cs.mobileprogramming.firandra_savitri.yournotes.opengl.SplashScreenGLSurfaceView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/opengl"/>
+
     <ImageView
             android:id="@+id/logo"
             android:layout_width="200dp"
             android:layout_height="245dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/splash" />
+            android:src="@drawable/splash"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
 
 </RelativeLayout>

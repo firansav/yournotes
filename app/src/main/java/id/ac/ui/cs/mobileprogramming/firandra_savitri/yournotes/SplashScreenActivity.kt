@@ -17,14 +17,16 @@ class SplashScreenActivity : AppCompatActivity() {
     private val SPLASH_TIME_OUT:Long = 5000
     private val notificationChannelId = "10001"
     private val defaultNotificationChannelId = "default"
-    private val delay = 10000
+    private val delay:Long = 10000
+    private val delay2:Long = 60000
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splashscreen)
 
-        scheduleNotification(getNotification(getString(R.string.notification)))
+        scheduleNotification(getNotification(getString(R.string.notification)), delay)
+        scheduleNotification(getNotification(getString(R.string.recurring_notif)), delay2)
 
         Handler().postDelayed({
             startActivity(Intent(this,MainActivity::class.java))
@@ -32,7 +34,7 @@ class SplashScreenActivity : AppCompatActivity() {
         }, SPLASH_TIME_OUT)
     }
 
-    private fun scheduleNotification(notification: Notification) {
+    private fun scheduleNotification(notification: Notification, delay : Long) {
         val notificationIntent = Intent(this, NotificationHelper::class.java)
         notificationIntent.putExtra(NotificationHelper.NOTIFICATION_ID, 1)
         notificationIntent.putExtra(NotificationHelper.NOTIFICATION, notification)
