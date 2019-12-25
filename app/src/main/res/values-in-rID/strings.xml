@@ -32,4 +32,6 @@
     <string name="played">Musik Dimainkan</string>
     <string name="stopped">Musik Diberhentikan</string>
     <string name="random_fact">Fakta Unik Acak</string>
+    <string name="tap_here">Ketuk di sini untuk membuka YourNotes dan menulis note-mu sendiri.</string>
+    <string name="recurring_notif">Sudahkah Anda menulis di YourNotes hari ini?</string>
 </resources>
